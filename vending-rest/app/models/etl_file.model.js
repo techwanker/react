@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const EtlFile = sequelize.define("etlFiles", {
+    const EtlFile = sequelize.define("etl_file", {
       etl_file_id: {
         type: Sequelize.BIGINT,
         autoIncrement: true,
@@ -25,9 +25,6 @@ module.exports = (sequelize, Sequelize) => {
       },
       json: {
         type: Sequelize.JSONB
-      },
-      {
-        tableName: 'etl_file'
       }
     });
     return EtlFile;
