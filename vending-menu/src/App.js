@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
+import Loads from "./pages/Loads";
 import Products from "./pages/Products"
 class App extends Component {
   state = {

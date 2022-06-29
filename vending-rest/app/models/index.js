@@ -28,6 +28,5 @@ db.sequelize = sequelize;
 
 db.etl_file = require("./etl_file.model.js")(sequelize, Sequelize);
 db.product = require("./product.model.js")(sequelize, Sequelize);
-db.etl_file = require("./etl_file.model")(sequelize, Sequelize);
 
 module.exports = db;

@@ -3,7 +3,7 @@
 # vending-menu
 the vending-menu Loads page should iterate through vending-rest/loads REST
 output
-
+- This is Completed
 
 # Vending-Rest
 Tests for REST services
