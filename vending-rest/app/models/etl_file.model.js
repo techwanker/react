@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const EtlFile = sequelize.define("etlFiles", {
+    const EtlFile = sequelize.define("etl_file", {
       etl_file_id: {
         type: Sequelize.BIGINT,
         autoIncrement: true,

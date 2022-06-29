@@ -9,30 +9,65 @@ const Register = () => {
     const [addressLine1, setAddressLine1] = useState('');
     const [addressLine2, setAddressLine2] = useState('');
     const [city, setCity] = useState('');
-    const [stateCode, setStateCode] = useState('');
+    const [state, setStateCode] = useState('');
     const [postalCode, setPostalCode] = useState('');
     const [companyName, setCompanyName] = useState('');
     const [companyWebsite, setCompanyWebsite] = useState('');
     const [telephoneNumber, setTelephoneNumber] = useState('');
     const [validate, setValidate] = useState({});   // TODO what does this useState mean?
     const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);   // TODO what does this useState mean?
 
     const validateRegister = () => {
         let isValid = true;
 
         let validator = Form.validator({
-            name:            { value: name,         isRequired: true, }, 
-            email:           { value: email,        isRequired: true, isEmail: true },
-            password:        { value: password,     isRequired: true, minLength: 6 },
-            companyName:     { value: companyName,  isRequired: true, },
-            addressLine1:    { value: addressLine1, isRequired: true, },
-            addressLine2:    { value: addressLine2, isRequired: true, },
-            city:            { value: city,         isRequired: true, },
-            stateCode:       { value: stateCode,    isRequired: true, },
-            postalCode:      { value: postalCode,     isRequired: true, },
-            telephoneNumber: { value: telephoneNumber, isRequired: true, },
-            companyWebsite:  { value: companyWebsite, isRequired: true, },
+            name: {
+                value: name,
+                isRequired: true,
+            },
+            email: {
+                value: email,
+                isRequired: true,
+                isEmail: true
+            },
+            password: {
+                value: password,
+                isRequired: true,
+                minLength: 6
+            },
+            addressLine1: {
+               value: addressLine1,
+               isRequired: true,
+            },
+            addressLine2: {
+                value: addressLine2,
+                isRequired: true,
+            },
+            city: {
+                value: city,
+                isRequired: true,
+            },
+            stateCode: {
+                value: stateCode,
+                isRequired: true,
+            },
+            postalCode: {
+                value: postalCode,
+                isRequired: true,
+            },
+            companyName: {
+                value: companyName,
+                isRequired: true,
+            },
+            telephoneNumber: {
+                value: telephoneNumber,
+                isRequired: true,
+            },
+            companyWebsite: {
+                value: companyWebsite,
+                isRequired: true,
+            },
         });
 
         if (validator !== null) {
@@ -256,15 +291,15 @@ const Register = () => {
                                 <div className="state mb-3">
                                     <input type="state"
                                         className={`form-control ${validate.validate && validate.validate.state ? 'is-invalid ' : ''}`}
-                                        id="stateCode"
-                                        name="stateCode"
-                                        value={stateCode}
-                                        placeholder="stateCode"
+                                        id="state"
+                                        name="state"
+                                        value={state}
+                                        placeholder="state"
                                         onChange={(e) => setStateCode(e.target.value)}
                                     />
 
                                     <div className={`invalid-feedback text-start ${(validate.validate && validate.validate.state) ? 'd-block' : 'd-none'}`} >
-                                        {(validate.validate && validate.validate.state) ? validate.validate.stateCode[0] : ''}
+                                        {(validate.validate && validate.validate.state) ? validate.validate.state[0] : ''}
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -277,7 +312,7 @@ const Register = () => {
                                         id="postalCode"
                                         name="postalCode"
                                         value={postalCode}
-                                        placeholder="postalCode"
+                                        placeholder="postal_code"
                                         onChange={(e) => setPostalCode(e.target.value)}
                                     />
 
@@ -296,7 +331,7 @@ const Register = () => {
                                         onChange={(e) => setTelephoneNumber(e.target.value)}
                                     />
 
-                                    <div className={`invalid-feedback text-start ${(validate.validate && validate.validate.telephoneNumber) ? 'd-block' : 'd-none'}`} >
+                                    <div className={`invalid-feedback text-start ${(validate.validate && validate.validate.state) ? 'd-block' : 'd-none'}`} >
                                         {(validate.validate && validate.validate.telephoneNumber) ? validate.validate.telephoneNumber[0] : ''}
                                     </div>
                                 </div>
