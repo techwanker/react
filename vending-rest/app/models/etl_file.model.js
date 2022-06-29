@@ -25,9 +25,6 @@ module.exports = (sequelize, Sequelize) => {
       },
       json: {
         type: Sequelize.JSONB
-      },
-      {
-        tableName: 'etl_file'
       }
     });
     return EtlFile;

@@ -17,6 +17,10 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     }
 });
 
+sequelize.authenticate()
+  .then(() => console.log(`======= DB connected successfully =======`))
+  .catch((er) => console.log(er));
+
 const db = {};
 
 db.Sequelize = Sequelize;
@@ -24,5 +28,6 @@ db.sequelize = sequelize;
 
 db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 db.product = require("./product.model.js")(sequelize, Sequelize);
+db.etl_file = require("./etl_file.model")(sequelize, Sequelize);
 
 module.exports = db;
